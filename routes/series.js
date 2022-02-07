@@ -1,13 +1,10 @@
 const express = require('express')
 const router = express.Router()
 
-const series = [
-  { name: 'Friends' },
-  { name: 'Deixados para trás'},
-  { name: 'Os Dez Mandamentos'}
-]
+const Serie = require('../models/serie')
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  const series = await Serie.find({})
   res.send(series)
 })
 router.get('/:id', (req, res) => {
