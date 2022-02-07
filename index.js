@@ -12,6 +12,6 @@ app.use('/series', series)
 mongoose
 .connect(mongo, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
-    app.listen(port, () => console.log('Listening...'))
-  })
+  app.listen(port, () => console.log('Listening...'))
+})
 .catch(e => console.log(e))
