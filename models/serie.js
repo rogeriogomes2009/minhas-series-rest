@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const CommentSchema = mongoose.Schema({
-  comment: String
+  comment : String
 })
 const SerieSchema = mongoose.Schema({
   name: {
