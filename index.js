@@ -7,8 +7,11 @@ const User = require('./models/user')
 const jwt = require ('jsonwebtoken')
 const jwtSecret = 'abc123abc123abc123abc123'
 
+const cors = require('cors')
+
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
+app.use(cors())
 
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
