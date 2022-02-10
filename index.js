@@ -11,7 +11,15 @@ const cors = require('cors')
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors({
+  origin: (oirgin, callback) => {
+    if(origin === 'http://server2:8080') {
+      callback(null, true)
+    }else{
+      callback(new Error('Not alowed by CORS'))
+    }
+  }
+}))
 
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
